@@ -1,4 +1,4 @@
-// src/components/SkillsVisual.tsx (update)
+// src/components/SkillsVisual.tsx
 'use client'
 
 import { motion } from 'framer-motion'
@@ -22,28 +22,18 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all"
+                    className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
                 >
                     <div className="flex flex-col items-center text-center">
                         {skill.icon && (
-                            <motion.div
-                                className="w-16 h-16 mb-4 relative"
-                                animate={{ rotate: [0, 5, 0, -5, 0] }}
-                                transition={{
-                                    repeat: Infinity,
-                                    repeatType: "mirror",
-                                    duration: 5,
-                                    ease: "easeInOut"
-                                }}
-                            >
+                            <div className="w-16 h-16 mb-4 relative">
                                 <Image
                                     src={urlFor(skill.icon).url()}
                                     alt={skill.name}
                                     fill
                                     className="object-contain"
                                 />
-                            </motion.div>
+                            </div>
                         )}
                         <h3 className="text-lg font-medium mb-3">{skill.name}</h3>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">

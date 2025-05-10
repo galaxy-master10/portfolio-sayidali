@@ -47,6 +47,7 @@ export default {
                     { title: 'DevOps', value: 'devops' },
                     { title: 'Design', value: 'design' },
                     { title: 'Tools', value: 'tools' },
+                    { title: 'Language', value: 'languages' },
                 ],
             },
         },
