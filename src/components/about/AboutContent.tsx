@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FiCode, FiCoffee, FiHeadphones, FiBookOpen, FiMapPin, FiMail } from 'react-icons/fi'
+import {FiCode, FiCoffee, FiHeadphones, FiBookOpen, FiMapPin, FiMail, FiCamera} from 'react-icons/fi'
 import { SiJavascript, SiReact, SiNodedotjs, SiNextdotjs } from 'react-icons/si'
 import TimelineItem from './TimelineItem'
 import CodeBlock from './CodeBlock'
@@ -96,7 +96,7 @@ export default function AboutContent() {
                                             </div>
                                             <div className="flex space-x-3">
                                                 <motion.a
-                                                    href="mailto:hello@sayidali.com"
+                                                    href="mailto:ibrahimsayidali10@gmail.com"
                                                     className="w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center text-white"
                                                     whileHover={{ scale: 1.1 }}
                                                     whileTap={{ scale: 0.9 }}
@@ -104,7 +104,7 @@ export default function AboutContent() {
                                                     <FiMail />
                                                 </motion.a>
                                                 <motion.a
-                                                    href="https://github.com/sayidali"
+                                                    href="https://github.com/"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white"
@@ -130,7 +130,7 @@ export default function AboutContent() {
 
                                 <div className="prose dark:prose-invert max-w-none">
                                     <p className="mb-4">
-                                        I'm a full-stack developer based in Somalia with a passion for building exceptional digital experiences that combine stunning design with robust functionality.
+                                        I'm a full-stack developer based in Belgium with a passion for building exceptional digital experiences that combine stunning design with robust functionality.
                                     </p>
 
                                     <p className="mb-4">
@@ -138,7 +138,7 @@ export default function AboutContent() {
                                     </p>
 
                                     <p className="mb-8">
-                                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community.
+                                        When I'm not coding, you'll find me exploring new technologies, contributing to public projects not exactly open source, or sharing my developer knowledge with the somali community.
                                     </p>
                                 </div>
 
@@ -147,14 +147,14 @@ export default function AboutContent() {
                                         <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
                                             <FiMapPin />
                                         </div>
-                                        <span>Somalia, East Africa</span>
+                                        <span>Kortrijk, Belgium</span>
                                     </div>
 
                                     <div className="flex items-center space-x-3">
                                         <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
                                             <FiCode />
                                         </div>
-                                        <span>5+ Years Experience</span>
+                                        <span>2.5+ Years Experience</span>
                                     </div>
 
                                     <div className="flex items-center space-x-3">
@@ -216,32 +216,27 @@ export default function AboutContent() {
 
                                 <div className="space-y-6 mb-12">
                                     <TimelineItem
-                                        year="2023 - Present"
-                                        title="Senior Full-Stack Developer"
-                                        company="Tech Innovators Inc."
-                                        description="Leading development of enterprise-level web applications using Next.js, React, and Node.js. Implementing CI/CD pipelines and mentoring junior developers."
+                                        year="2025 - Present"
+                                        title="Intern Full-Stack Developer"
+                                        company="Ipcom NV"
+                                        description="Inhouse application development and maintenance. Collaborated with cross-functional teams to deliver high-quality software solutions."
                                     />
 
                                     <TimelineItem
                                         year="2021 - 2023"
                                         title="Full-Stack Developer"
-                                        company="WebSolutions LLC"
-                                        description="Developed and maintained multiple client projects using React, Express, and MongoDB. Collaborated with design teams to implement responsive interfaces."
+                                        company="Tech with Said"
+                                        description="Solo app developer and freelancer. Developing apps for clients both family and friends. Focused on building scalable and efficient web applications."
                                     />
 
                                     <TimelineItem
-                                        year="2019 - 2021"
-                                        title="Frontend Developer"
-                                        company="Digital Creatives"
+                                        year="2021 - 2022"
+                                        title="Summer student job frontend Developer"
+                                        company="Callens Digital Hub"
                                         description="Built interactive user interfaces with React. Implemented state management solutions and optimized application performance."
                                     />
 
-                                    <TimelineItem
-                                        year="2018 - 2019"
-                                        title="Web Development Intern"
-                                        company="StartUp Hub"
-                                        description="Assisted in developing website features and learned modern web development practices in a fast-paced startup environment."
-                                    />
+
                                 </div>
 
                                 <h2 className="text-3xl font-heading font-bold mb-6 flex items-center">
@@ -358,9 +353,9 @@ function solveProblems(problem) {
                                 description: "I'm constantly reading technical books and articles to stay updated with the latest trends."
                             },
                             {
-                                icon: <FiCoffee className="w-8 h-8" />,
-                                title: "Coffee Exploration",
-                                description: "I'm a coffee enthusiast who enjoys trying different brewing methods and beans."
+                                icon: <FiCamera className="w-8 h-8" />,
+                                title: "Photography",
+                              description: "I'm a photography enthusiast who enjoys capturing moments and exploring creative compositions."
                             }
                         ].map((item, index) => (
                             <motion.div
