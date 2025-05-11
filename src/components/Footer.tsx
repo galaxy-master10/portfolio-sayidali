@@ -17,19 +17,19 @@ export default function Footer() {
                     </div>
 
                     <div className="flex space-x-6">
-                        <a href="https://github.com/sayidali" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
                             <FiGithub size={20} />
                             <span className="sr-only">GitHub</span>
                         </a>
-                        <a href="https://twitter.com/sayidali" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
                             <FiTwitter size={20} />
                             <span className="sr-only">Twitter</span>
                         </a>
-                        <a href="https://linkedin.com/in/sayidali" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
+                        <a href="https://linkedin.com/in" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
                             <FiLinkedin size={20} />
                             <span className="sr-only">LinkedIn</span>
                         </a>
-                        <a href="mailto:hello@sayidali.com" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
+                        <a href="mailto:ibrahimsayidali10@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors">
                             <FiMail size={20} />
                             <span className="sr-only">Email</span>
                         </a>

@@ -49,10 +49,11 @@ export default async function Home() {
                 <AnimatedHeading />
                 <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300 max-w-xl">
                   I'm a full-stack web developer with a passion for creating beautiful and functional web applications. I specialize in modern JavaScript frameworks, mobile applications and responsive design, ensuring that my projects are not only visually appealing but also user-friendly and performant.
+                  And not to forget, currently I am a graduate student at the University of Howest Applied Science, Brugge Belgium, pursuing a degree in Computer Science degree.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <AnimatedButton href="/projects" variant="primary">
-                    View My Work <FiArrowRight />
+                  <AnimatedButton href="/about" variant="primary">
+                    Get to know me<FiArrowRight />
                   </AnimatedButton>
                   <AnimatedButton href="/contact" variant="secondary">
                     Contact Me
