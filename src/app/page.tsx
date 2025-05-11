@@ -25,12 +25,13 @@ async function getHomeData() {
   )
 
   const skills = await client.fetch(
-      groq`*[_type == "skill"] | order(proficiency desc)[0...12]{
-      _id,
-      name,
-      proficiency,
-      icon
-    }`
+      groq`*[_type == "skill"] | order(proficiency desc){
+    _id,
+    name,
+    proficiency,
+    category,
+    icon
+  }`
   )
 
   return { featuredProjects, skills }
