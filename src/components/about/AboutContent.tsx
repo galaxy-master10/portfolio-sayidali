@@ -125,12 +125,12 @@ export default function AboutContent() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                             >
                                 <h2 className="text-3xl font-heading font-bold mb-6">
-                                    Hello, I'm <span className="text-primary-500">Sayidali</span>
+                                    Hello,  I&apos;m <span className="text-primary-500">Sayidali</span>
                                 </h2>
 
                                 <div className="prose dark:prose-invert max-w-none">
                                     <p className="mb-4">
-                                        I'm a full-stack developer based in Belgium with a passion for building exceptional digital experiences that combine stunning design with robust functionality.
+                                        I&apos;m a full-stack developer based in Belgium with a passion for building exceptional digital experiences that combine stunning design with robust functionality.
                                     </p>
 
                                     <p className="mb-4">
@@ -138,7 +138,7 @@ export default function AboutContent() {
                                     </p>
 
                                     <p className="mb-8">
-                                        When I'm not coding, you'll find me exploring new technologies, contributing to public projects not exactly open source, or sharing my developer knowledge with the somali community.
+                                        When  I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to public projects not exactly open source, or sharing my developer knowledge with the somali community.
                                     </p>
                                 </div>
 
@@ -271,9 +271,9 @@ function solveProblems(problem) {
                                 </div>
 
                                 <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6">
-                                    <h3 className="text-xl font-bold mb-4">Let's Connect</h3>
+                                    <h3 className="text-xl font-bold mb-4">Let&apos;s Connect</h3>
                                     <p className="mb-4">
-                                        I'm always interested in new opportunities, collaborations, or just chatting about tech. Feel free to reach out!
+                                        I&apos;m always interested in new opportunities, collaborations, or just chatting about tech. Feel free to reach out!
                                     </p>
                                     <motion.a
                                         href="mailto:hello@sayidali.com"
@@ -336,7 +336,7 @@ function solveProblems(problem) {
                             Beyond <span className="text-primary-500">Coding</span>
                         </h2>
                         <p className="text-gray-700 dark:text-gray-300">
-                            When I'm not immersed in lines of code, here are some things I enjoy
+                            When  I&apos;m not immersed in lines of code, here are some things I enjoy
                         </p>
                     </motion.div>
 

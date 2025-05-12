@@ -1,4 +1,3 @@
-// src/app/projects/[slug]/page.tsx
 import { groq } from 'next-sanity'
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
@@ -65,6 +64,46 @@ async function getProject(slug: string): Promise<ProjectData | null> {
 
 // Components for the portable text
 const ptComponents = {
+    block: {
+        // Different heading levels
+        h1: ({children}: any) => <h1 className="text-4xl font-bold mt-12 mb-6">{children}</h1>,
+        h2: ({children}: any) => <h2 className="text-3xl font-bold mt-10 mb-5">{children}</h2>,
+        h3: ({children}: any) => <h3 className="text-2xl font-bold mt-8 mb-4">{children}</h3>,
+        h4: ({children}: any) => <h4 className="text-xl font-bold mt-6 mb-3">{children}</h4>,
+        normal: ({children}: any) => <p className="text-gray-700 dark:text-gray-300 mb-5">{children}</p>,
+        blockquote: ({children}: any) => (
+            <blockquote className="border-l-4 border-indigo-500 dark:border-emerald-500 pl-4 italic my-6">
+                {children}
+            </blockquote>
+        ),
+    },
+    list: {
+        bullet: ({children}: any) => <ul className="list-disc pl-6 mb-6 space-y-2">{children}</ul>,
+        number: ({children}: any) => <ol className="list-decimal pl-6 mb-6 space-y-2">{children}</ol>,
+    },
+    listItem: {
+        bullet: ({children}: any) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
+        number: ({children}: any) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
+    },
+    marks: {
+        strong: ({children}: any) => <strong className="font-bold">{children}</strong>,
+        em: ({children}: any) => <em className="italic">{children}</em>,
+        code: ({children}: any) => (
+            <code className="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 font-mono text-sm">
+                {children}
+            </code>
+        ),
+        link: ({value, children}: any) => (
+            <a
+                href={value.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-500 dark:text-emerald-400 hover:underline"
+            >
+                {children}
+            </a>
+        ),
+    },
     types: {
         image: ({ value }: any) => {
             return (
@@ -101,7 +140,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
             <div className="container mx-auto px-4 py-20">
                 <div className="max-w-4xl mx-auto">
                     {/* Back button */}
-                    <Link href="/projects" className="inline-flex items-center space-x-2 text-primary-500 dark:text-emerald-400 mb-8 hover:underline">
+                    <Link href="/projects" className="inline-flex items-center space-x-2 text-indigo-500 dark:text-emerald-400 mb-8 hover:underline">
                         <FiArrowLeft />
                         <span>Back to Projects</span>
                     </Link>
@@ -114,7 +153,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                     {/* Categories */}
                     <div className="flex flex-wrap gap-2 mb-8">
                         {project.categories?.map((category: string, index: number) => (
-                            <span key={index} className="bg-primary-100 dark:bg-emerald-900 text-primary-800 dark:text-emerald-300 text-sm px-3 py-1 rounded-full">
+                            <span key={index} className="bg-indigo-100 dark:bg-emerald-900 text-indigo-800 dark:text-emerald-300 text-sm px-3 py-1 rounded-full">
                                 {category}
                             </span>
                         ))}
@@ -149,7 +188,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center space-x-2 bg-primary-500 dark:bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-primary-600 dark:hover:bg-emerald-700 transition-colors"
+                                className="inline-flex items-center space-x-2 bg-indigo-500 dark:bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 dark:hover:bg-emerald-700 transition-colors"
                             >
                                 <FiExternalLink />
                                 <span>Live Demo</span>
