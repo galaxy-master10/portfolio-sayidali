@@ -231,9 +231,9 @@ export default function AboutContent() {
 
                                     <TimelineItem
                                         year="2021 - 2022"
-                                        title="Summer student job frontend Developer"
+                                        title="Summer student job IT Helpdesk Assistant"
                                         company="Callens Digital Hub"
-                                        description="Built interactive user interfaces with React. Implemented state management solutions and optimized application performance."
+                                        description="Provided technical support to users, resolved hardware/software issues, and assisted with system maintenance and troubleshooting in a professional IT environment."
                                     />
 
 

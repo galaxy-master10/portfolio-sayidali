@@ -53,7 +53,7 @@ export default function Contact() {
                                     <div>
                                         <h3 className="font-medium mb-1">Location</h3>
                                         <p className="text-gray-600 dark:text-gray-400">
-                                            Brugge, Belgium
+                                            Kortrijk, Belgium
                                         </p>
                                     </div>
                                 </div>

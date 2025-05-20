@@ -12,7 +12,7 @@ export default function Footer() {
                             Sayidali<span className="text-primary-500">.</span>
                         </Link>
                         <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-md">
-                            Full-stack web developer specializing in modern JavaScript frameworks and responsive design.
+                            Full-stack web developer specializing in modern JavaScript frameworks and app development.
                         </p>
                     </div>
 
