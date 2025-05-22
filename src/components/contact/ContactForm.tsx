@@ -57,7 +57,7 @@ export default function ContactForm() {
             })
         }
     }
-
+/*
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -88,6 +88,49 @@ export default function ContactForm() {
             setFormState('error')
 
             // Reset error state after 3 seconds
+            setTimeout(() => {
+                setFormState('idle')
+            }, 3000)
+        }
+    }
+*/
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+
+        if (!validateForm()) return
+
+        setFormState('submitting')
+
+        try {
+            const response = await fetch('https://formspree.io/f/myzwvndz', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            if (response.ok) {
+                setFormState('success')
+                setFormData({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: '',
+                })
+                setTimeout(() => {
+                    setFormState('idle')
+                }, 3000)
+            } else {
+                console.error('Form submission failed:', response);
+                setFormState('error')
+                setTimeout(() => {
+                    setFormState('idle')
+                }, 3000)
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error)
+            setFormState('error')
             setTimeout(() => {
                 setFormState('idle')
             }, 3000)
