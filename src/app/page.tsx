@@ -47,14 +47,17 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <AnimatedHeading />
+                <AnimatedHeading/>
                 <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300 max-w-xl">
-                  I'm a full-stack web developer with a passion for creating beautiful and functional web applications. I specialize in modern JavaScript frameworks, mobile applications and responsive design, ensuring that my projects are not only visually appealing but also user-friendly and performant.
-                  And not to forget, currently I am a graduate student at the University of Howest Applied Science, Brugge Belgium, pursuing a degree in Computer Science degree.
+                  I'm a full-stack web developer with a passion for creating beautiful and functional web applications.
+                  I specialize in modern JavaScript frameworks, mobile applications and responsive design, ensuring that
+                  my projects are not only visually appealing but also user-friendly and performant.
+                  And not to forget, currently I am a graduate student at the University of Howest Applied Science,
+                  Brugge Belgium, pursuing a degree in Computer Science degree.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <AnimatedButton href="/about" variant="primary">
-                    Get to know me<FiArrowRight />
+                    Get to know me<FiArrowRight/>
                   </AnimatedButton>
                   <AnimatedButton href="/contact" variant="secondary">
                     Contact Me
@@ -62,11 +65,17 @@ export default async function Home() {
                 </div>
               </div>
               <div className="relative hidden lg:block">
-                <div className="absolute top-0 -left-4 right-0 bottom-0 bg-secondary-500/20 rounded-lg -z-10 transform rotate-3"></div>
-                <div className="relative bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden aspect-[4/3]">
-                  {/* Replace with your image */}
+                {/* tilted background shape */}
+                <div className="absolute top-0 -left-4 right-0 bottom-0
+                  bg-secondary-500/20 rounded-lg -z-10 transform rotate-3">
+                </div>
+
+                {/* portrait-oriented image container */}
+                <div className="relative bg-gray-200 dark:bg-gray-800
+                  rounded-lg overflow-hidden
+                  aspect-[3/4] w-full max-w-sm mx-auto">
                   <Image
-                      src="/profile-image.jpg"
+                      src="/good-pic.jpg"
                       alt="Sayidali Jama"
                       fill
                       className="object-cover"
@@ -74,6 +83,7 @@ export default async function Home() {
                   />
                 </div>
               </div>
+
             </div>
           </div>
         </section>
