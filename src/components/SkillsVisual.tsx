@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
@@ -39,12 +39,9 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
 
     // Build the tab list: “All Skills” + only those STATIC_CATEGORIES that actually appear
     const categories = useMemo(() => {
-        const used = new Set(skills.map(s => s.category).filter(Boolean))
-        const filtered = STATIC_CATEGORIES.filter(c => used.has(c.id))
-        return [
-            { id: 'all', label: 'All Skills', Icon: FiGrid },
-            ...filtered,
-        ]
+        const used = new Set(skills.map((s) => s.category).filter(Boolean))
+        const filtered = STATIC_CATEGORIES.filter((c) => used.has(c.id))
+        return [{ id: 'all', label: 'All Skills', Icon: FiGrid }, ...filtered]
     }, [skills])
 
     // For non-“all” views, pre-filter
@@ -53,7 +50,7 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
         return skills.filter((s) => s.category === selectedCategory)
     }, [selectedCategory, skills])
 
-    // Animations (unchanged)
+    // Animations
     const tabVariants = {
         inactive: { opacity: 0.6 },
         active: { opacity: 1, scale: 1.05 },
@@ -93,7 +90,6 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
 
     return (
         <div className="space-y-10">
-
             {/* ——— Category Tabs ——— */}
             <div className="flex justify-center mb-8 overflow-x-auto pb-4">
                 <div className="flex space-x-2 md:space-x-4">
@@ -123,10 +119,10 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                 {selectedCategory === 'all' ? (
                     // ——— All Skills: show “islands” per category ———
                     Object.entries(grouped).map(([catId, skillsInCat]) => {
-                        // find our label/icon or fallback
                         const catMeta =
                             categories.find((c) => c.id === catId) ||
                             ({ label: catId, Icon: FiGrid } as any)
+
                         return (
                             <motion.div
                                 key={catId}
@@ -172,22 +168,22 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                                         />
                                                     </motion.div>
                                                 )}
-                                                <h4 className="text-lg font-medium mb-2">
-                                                    {skill.name}
-                                                </h4>
-                                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                                <h4 className="text-lg font-medium mb-2">{skill.name}</h4>
+
+                                                {/* Green progress bar with overlay */}
+                                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden relative my-2">
                                                     <motion.div
-                                                        className="bg-primary-500 h-2.5 rounded-full"
+                                                        className="bg-blue-300 h-2.5 rounded-full"
                                                         variants={progressVariants}
                                                         initial="hidden"
                                                         whileInView="visible"
                                                         viewport={{ once: true }}
                                                         custom={skill.proficiency}
                                                     />
+                                                    <span className="absolute inset-0 flex items-center justify-center text-[0.65rem] font-medium text-white">
+                            {skill.proficiency}%
+                          </span>
                                                 </div>
-                                                <span className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                          {skill.proficiency}%
-                        </span>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -212,7 +208,6 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                 whileHover="hover"
                                 className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
                             >
-                                {/* …same skill‐card inner markup as above… */}
                                 <div className="flex flex-col items-center text-center">
                                     {skill.icon && (
                                         <motion.div
@@ -235,19 +230,21 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                         </motion.div>
                                     )}
                                     <h4 className="text-lg font-medium mb-2">{skill.name}</h4>
-                                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+
+                                    {/* Green progress bar with overlay */}
+                                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden relative my-2">
                                         <motion.div
-                                            className="bg-primary-500 h-2.5 rounded-full"
+                                            className="bg-green-200 h-2.5 rounded-full"
                                             variants={progressVariants}
                                             initial="hidden"
                                             whileInView="visible"
                                             viewport={{ once: true }}
                                             custom={skill.proficiency}
                                         />
+                                        <span className="absolute inset-0 flex items-center justify-center text-[0.65rem] font-medium text-white">
+                      {skill.proficiency}%
+                    </span>
                                     </div>
-                                    <span className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    {skill.proficiency}%
-                  </span>
                                 </div>
                             </motion.div>
                         ))}
