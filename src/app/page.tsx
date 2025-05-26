@@ -139,7 +139,7 @@ export default async function Home() {
             </p>
             <Link
                 href="/contact"
-                className="px-8 py-4 bg-white text-primary-500 hover:bg-gray-100 rounded-lg inline-flex items-center gap-2 transition-colors font-medium"
+                className="px-8 py-4  bg-teal-700 text-primary-500 hover:bg-teal-500 rounded-lg inline-flex items-center gap-2 transition-colors font-medium"
             >
               Get in Touch <FiArrowRight />
             </Link>

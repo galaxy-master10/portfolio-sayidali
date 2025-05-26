@@ -17,8 +17,8 @@ export default function AnimatedButton({
                                            children
                                        }: AnimatedButtonProps) {
     const buttonStyles = {
-        primary: "bg-primary-500 hover:bg-primary-600 text-white",
-        secondary: "bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500"
+        primary: "bg-red-300 hover:bg-primary-600 text-black",
+        secondary: "bg-indigo-400 border border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500"
     }
 
     return (
