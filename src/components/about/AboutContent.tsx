@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {FiCode, FiCoffee, FiHeadphones, FiBookOpen, FiMapPin, FiMail, FiCamera} from 'react-icons/fi'
+import { HiOutlineSparkles, HiOutlineClipboardList, HiOutlineUsers, HiOutlineClock, HiOutlineLightBulb } from 'react-icons/hi';
 import { SiJavascript, SiReact, SiNodedotjs, SiNextdotjs } from 'react-icons/si'
 import TimelineItem from './TimelineItem'
 import CodeBlock from './CodeBlock'
@@ -120,53 +121,63 @@ export default function AboutContent() {
                             </motion.div>
 
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.2}}
                             >
                                 <h2 className="text-3xl font-heading font-bold mb-6">
-                                    Hello,  I&apos;m <span className="text-primary-500">Sayidali</span>
+                                    Hello, I&apos;m <span className="text-primary-500">Sayidali</span>
                                 </h2>
 
                                 <div className="prose dark:prose-invert max-w-none">
                                     <p className="mb-4">
-                                        I&apos;m a full-stack developer based in Belgium with a passion for building exceptional digital experiences that combine stunning design with robust functionality.
+                                        I&apos;m a full-stack developer based in Belgium with a passion for building
+                                        exceptional digital experiences that combine stunning design with robust
+                                        functionality.
                                     </p>
 
                                     <p className="mb-4">
-                                        With expertise in both frontend and backend technologies, I specialize in creating responsive web applications that solve real-world problems. My approach combines technical excellence with an eye for design and user experience.
+                                        With expertise in both frontend and backend technologies, I specialize in
+                                        creating responsive web applications that solve real-world problems. My approach
+                                        combines technical excellence with an eye for design and user experience.
                                     </p>
 
                                     <p className="mb-8">
-                                        When  I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to public projects not exactly open source, or sharing my developer knowledge with the somali community.
+                                        When I&apos;m not coding, you&apos;ll find me exploring new technologies,
+                                        contributing to public projects not exactly open source, or sharing my developer
+                                        knowledge with the somali community.
                                     </p>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
-                                            <FiMapPin />
+                                        <div
+                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            <FiMapPin/>
                                         </div>
                                         <span>Kortrijk, Belgium</span>
                                     </div>
 
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
-                                            <FiCode />
+                                        <div
+                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            <FiCode/>
                                         </div>
                                         <span>2.5+ Years Experience</span>
                                     </div>
 
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
-                                            <FiCoffee />
+                                        <div
+                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            <FiCoffee/>
                                         </div>
                                         <span>Coffee Enthusiast</span>
                                     </div>
 
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
-                                            <FiBookOpen />
+                                        <div
+                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            <FiBookOpen/>
                                         </div>
                                         <span>Lifelong Learner</span>
                                     </div>
@@ -180,21 +191,54 @@ export default function AboutContent() {
 
                                     <div className="flex flex-wrap gap-4">
                                         {[
-                                            { icon: SiJavascript, name: 'JavaScript', color: 'text-yellow-400' },
-                                            { icon: SiReact, name: 'React', color: 'text-blue-400' },
-                                            { icon: SiNodedotjs, name: 'Node.js', color: 'text-green-500' },
-                                            { icon: SiNextdotjs, name: 'Next.js', color: 'text-gray-100' }
+                                            {icon: SiJavascript, name: 'JavaScript', color: 'text-yellow-400'},
+                                            {icon: SiReact, name: 'React', color: 'text-blue-400'},
+                                            {icon: SiNodedotjs, name: 'Node.js', color: 'text-green-500'},
+                                            {icon: SiNextdotjs, name: 'Next.js', color: 'text-gray-100'}
                                         ].map((tech, index) => (
                                             <motion.div
                                                 key={tech.name}
                                                 className="bg-gray-800 text-white rounded-lg px-4 py-2 flex items-center space-x-2"
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.3, delay: 0.4 + (index * 0.1) }}
-                                                whileHover={{ y: -5 }}
+                                                initial={{opacity: 0, y: 20}}
+                                                animate={{opacity: 1, y: 0}}
+                                                transition={{duration: 0.3, delay: 0.4 + (index * 0.1)}}
+                                                whileHover={{y: -5}}
                                             >
-                                                <tech.icon className={`w-5 h-5 ${tech.color}`} />
+                                                <tech.icon className={`w-5 h-5 ${tech.color}`}/>
                                                 <span>{tech.name}</span>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="mb-10">
+                                    <h3 className="text-xl font-bold mb-4 flex items-center">
+                                        <span className="mr-2">Soft Skills</span>
+                                        <div className="h-[1px] flex-grow bg-gray-300 dark:bg-gray-700"></div>
+                                    </h3>
+
+                                    <div className="flex flex-wrap gap-4">
+                                        {[
+                                            {icon: HiOutlineSparkles, name: 'Flexible', color: 'text-purple-400'},
+                                            {icon: HiOutlineClipboardList, name: 'Organized', color: 'text-yellow-300'},
+                                            {icon: HiOutlineUsers, name: 'Team Player', color: 'text-green-400'},
+                                            {icon: HiOutlineClock, name: 'Time Management', color: 'text-blue-300'},
+                                            {
+                                                icon: HiOutlineLightBulb,
+                                                name: 'Problem Solver',
+                                                color: 'text-orange-300'
+                                            },
+                                        ].map((skill, index) => (
+                                            <motion.div
+                                                key={skill.name}
+                                                className="bg-gray-800 text-white rounded-lg px-4 py-2 flex items-center space-x-2"
+                                                initial={{opacity: 0, y: 20}}
+                                                animate={{opacity: 1, y: 0}}
+                                                transition={{duration: 0.3, delay: 0.4 + index * 0.1}}
+                                                whileHover={{y: -5}}
+                                            >
+                                                <skill.icon className={`w-5 h-5 ${skill.color}`}/>
+                                                <span>{skill.name}</span>
                                             </motion.div>
                                         ))}
                                     </div>
@@ -205,9 +249,9 @@ export default function AboutContent() {
                         {/* Right Column - Journey & Code */}
                         <div>
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.3}}
                             >
                                 <h2 className="text-3xl font-heading font-bold mb-6 flex items-center">
                                     <span className="mr-3">My Journey</span>
