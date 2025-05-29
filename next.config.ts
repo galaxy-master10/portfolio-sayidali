@@ -1,6 +1,10 @@
 // next.config.js or next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // disable ESLint during `next build`
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     env: {
         NEXT_PUBLIC_SANITY_PROJECT_ID: 'bxzly96g',
         NEXT_PUBLIC_SANITY_DATASET: 'production',
@@ -14,14 +18,8 @@ const nextConfig = {
             },
         ],
     },
-    // disable ESLint during `next build`
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-    // enable the /app directory (Next.js 13+)
-    experimental: {
-        appDir: true,
-    },
+
+
 }
 
 export default nextConfig
