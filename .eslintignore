@@ -1,5 +1,0 @@
-# .eslintignore
-node_modules/
-build/
-dist/
-src/  # Ignore the entire source folder if needed

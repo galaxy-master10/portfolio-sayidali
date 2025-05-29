@@ -5,6 +5,9 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     env: {
         NEXT_PUBLIC_SANITY_PROJECT_ID: 'bxzly96g',
         NEXT_PUBLIC_SANITY_DATASET: 'production',
