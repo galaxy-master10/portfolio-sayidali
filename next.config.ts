@@ -14,6 +14,14 @@ const nextConfig = {
             },
         ],
     },
+    // disable ESLint during `next build`
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    // enable the /app directory (Next.js 13+)
+    experimental: {
+        appDir: true,
+    },
 }
 
 export default nextConfig
