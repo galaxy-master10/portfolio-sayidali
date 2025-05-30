@@ -38,7 +38,8 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${robotoMono.variable}`}
+        <html
+            className={`dark ${inter.variable} ${spaceGrotesk.variable} ${robotoMono.variable}`}
               suppressHydrationWarning>
 
         <body className="font-sans bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300">

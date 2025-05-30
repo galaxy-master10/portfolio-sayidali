@@ -37,7 +37,7 @@ const config: Config = {
                     950: '#042f2e',
                 },
                 dark: '#121212',
-                light: '#f8f8f8',
+
             },
             fontFamily: {
                 sans: ['var(--font-inter)'],
