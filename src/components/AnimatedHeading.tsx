@@ -25,13 +25,13 @@ export default function AnimatedHeading() {
 
     return (
         <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6"
+            className="text-4xl text-yellow-500  md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6"
             variants={container}
             initial="hidden"
             animate="visible"
         >
             <motion.span variants={item}>Hi, I&apos;m </motion.span>
-            <motion.span className="text-primary-500" variants={item}>Sayidali</motion.span>
+            <motion.span className="text-emerald-500" variants={item}>Sayidali</motion.span>
             <motion.div variants={item}>Full-Stack Developer</motion.div>
         </motion.h1>
     )

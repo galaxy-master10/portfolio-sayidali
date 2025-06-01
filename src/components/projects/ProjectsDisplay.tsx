@@ -67,8 +67,8 @@ export default function ProjectsDisplay({
                     onClick={() => setSelectedCategory('all')}
                     className={`px-4 py-2 rounded-lg transition-all ${
                         selectedCategory === 'all'
-                            ? 'bg-primary-500 dark:bg-emerald-500 text-white'
-                            : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                            ? 'bg-blue-500 dark:bg-emerald-500 text-white'
+                            : 'bg-blue-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                     }`}
                 >
                     All Projects
@@ -80,7 +80,7 @@ export default function ProjectsDisplay({
                         onClick={() => setSelectedCategory(category)}
                         className={`px-4 py-2 rounded-lg transition-all ${
                             selectedCategory === category
-                                ? 'bg-primary-500 dark:bg-emerald-500 text-white'
+                                ? 'bg-gray-700 dark:bg-emerald-500 text-white'
                                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }`}
                     >

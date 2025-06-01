@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: any }) {
     return (
         <motion.div
             whileHover={{ y: -8 }}
-            className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 h-full flex flex-col"
+            className="bg-gray-900 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 h-full flex flex-col"
         >
             <div className="relative h-48 md:h-56">
                 <Image
@@ -46,7 +46,7 @@ export default function ProjectCard({ project }: { project: any }) {
                 </div>
 
                 {project.featured && (
-                    <div className="absolute top-2 right-2 bg-primary-500 dark:bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">
+                    <div className="absolute top-2 right-2 bg-black dark:bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">
                         Featured
                     </div>
                 )}
@@ -57,7 +57,7 @@ export default function ProjectCard({ project }: { project: any }) {
                     {project.categories?.map((category: string, index: number) => (
                         <span
                             key={index}
-                            className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
+                            className="text-xs bg-cyan-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
                         >
               {category}
             </span>
@@ -65,13 +65,13 @@ export default function ProjectCard({ project }: { project: any }) {
                 </div>
 
                 <Link href={`/projects/${project.slug.current}`}>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-emerald-400 transition-colors">
+                    <h3 className="text-xl font-bold mb-2 text-emerald-400 dark:text-white hover:text-primary-500 dark:hover:text-emerald-400 transition-colors">
                         {project.title}
                     </h3>
                 </Link>
 
 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 flex-grow">
+                <p className="text-white dark:text-gray-400 mb-4 line-clamp-3 flex-grow">
                     {project.description}
                 </p>
 
@@ -79,13 +79,13 @@ export default function ProjectCard({ project }: { project: any }) {
                     {project.technologies?.slice(0, 3).map((tech: string, index: number) => (
                         <span
                             key={index}
-                            className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full"
+                            className="text-xs bg-indigo-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full"
                         >
               {tech}
             </span>
                     ))}
                     {project.technologies?.length > 3 && (
-                        <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-zinc-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full">
               +{project.technologies.length - 3} more
             </span>
                     )}

@@ -48,7 +48,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <AnimatedHeading/>
-                <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300 max-w-xl">
+                <p className="text-lg md:text-xl mb-8 text-gray-200 dark:text-gray-300 max-w-xl">
                   I'm a full-stack web developer with a passion for creating beautiful and functional web applications.
                   I specialize in modern JavaScript frameworks, mobile applications and responsive design, ensuring that
                   my projects are not only visually appealing but also user-friendly and performant.

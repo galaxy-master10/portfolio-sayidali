@@ -49,7 +49,7 @@ export default async function ProjectsPage() {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                         My Projects
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg mb-12 max-w-3xl">
+                    <p className="text-gray-400 dark:text-gray-400 text-lg mb-12 max-w-3xl">
                         Browse through my latest projects. Each project represents a journey of problem-solving,
                         creativity, and technical implementation.
                     </p>

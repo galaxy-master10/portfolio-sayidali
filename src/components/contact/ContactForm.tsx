@@ -264,7 +264,7 @@ export default function ContactForm() {
                 >
                     <p className="flex items-center">
                         <FiCheck className="mr-2 flex-shrink-0" />
-                        Thank you for your message! I'll get back to you soon.
+                        Thank you for your message! I'll contact you soon.
                     </p>
                 </motion.div>
             )}
