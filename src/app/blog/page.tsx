@@ -77,7 +77,7 @@ export default async function BlogPage() {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                         Blog
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg mb-12 max-w-3xl">
+                    <p className="text-gray-400 dark:text-gray-400 text-lg mb-12 max-w-3xl">
                         Thoughts, insights, and tutorials on web development, design, and technology.
                     </p>
 

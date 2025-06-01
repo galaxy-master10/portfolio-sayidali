@@ -132,7 +132,7 @@ export default function BlogPostsDisplay({
                                             )}
                                         </div>
 
-                                        <div className="p-6">
+                                        <div className="p-6 bg-gray-900">
                                             {/* Categories */}
                                             {post.categories && post.categories.length > 0 && (
                                                 <div className="flex flex-wrap gap-2 mb-2">
@@ -148,13 +148,13 @@ export default function BlogPostsDisplay({
                                             )}
 
                                             {/* Post title */}
-                                            <h2 className="text-xl font-bold mb-2 group-hover:text-indigo-500 dark:group-hover:text-emerald-400 transition-colors">
+                                            <h2 className="text-xl font-bold mb-2 group-hover:text-indigo-500 text-indigo-400 dark:group-hover:text-emerald-400 transition-colors">
                                                 {post.title}
                                             </h2>
 
                                             {/* Excerpt */}
                                             {post.excerpt && (
-                                                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                                                <p className="text-gray-200 dark:text-gray-400 mb-4 line-clamp-2">
                                                     {post.excerpt}
                                                 </p>
                                             )}

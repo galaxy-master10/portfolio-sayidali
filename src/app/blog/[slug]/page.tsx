@@ -73,11 +73,11 @@ function formatDate(dateString: string) {
 
 const ptComponents = {
     block: {
-        h1: ({ children }: any) => <h1 className="text-4xl font-bold mt-12 mb-6">{children}</h1>,
-        h2: ({ children }: any) => <h2 className="text-3xl font-bold mt-10 mb-5">{children}</h2>,
-        h3: ({ children }: any) => <h3 className="text-2xl font-bold mt-8 mb-4">{children}</h3>,
-        h4: ({ children }: any) => <h4 className="text-xl font-bold mt-6 mb-3">{children}</h4>,
-        normal: ({ children }: any) => <p className="text-gray-700 dark:text-gray-300 mb-5">{children}</p>,
+        h1: ({ children }: any) => <h1 className="text-4xl text-yellow-700  font-bold mt-12 mb-6">{children}</h1>,
+        h2: ({ children }: any) => <h2 className="text-3xl text-yellow-700  font-bold mt-10 mb-5">{children}</h2>,
+        h3: ({ children }: any) => <h3 className="text-2xl font-bold mt-8 text-yellow-700  mb-4">{children}</h3>,
+        h4: ({ children }: any) => <h4 className="text-xl font-bold mt-6 mb-3 text-yellow-700 ">{children}</h4>,
+        normal: ({ children }: any) => <p className="text-gray-300 dark:text-gray-300 mb-5 ">{children}</p>,
         blockquote: ({ children }: any) => (
             <blockquote className="border-l-4 border-indigo-500 dark:border-emerald-500 pl-4 italic my-6">
                 {children}
@@ -85,12 +85,12 @@ const ptComponents = {
         ),
     },
     list: {
-        bullet: ({ children }: any) => <ul className="list-disc pl-6 mb-6 space-y-2">{children}</ul>,
+        bullet: ({ children }: any) => <ul className="list-disc pl-6 mb-6 text-gray-300 space-y-2">{children}</ul>,
         number: ({ children }: any) => <ol className="list-decimal pl-6 mb-6 space-y-2">{children}</ol>,
     },
     listItem: {
-        bullet: ({ children }: any) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
-        number: ({ children }: any) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
+        bullet: ({ children }: any) => <li className="text-gray-300 dark:text-gray-300">{children}</li>,
+        number: ({ children }: any) => <li className="text-gray-300 dark:text-gray-300">{children}</li>,
     },
     marks: {
         strong: ({ children }: any) => <strong className="font-bold">{children}</strong>,
