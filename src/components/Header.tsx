@@ -50,7 +50,7 @@ export default function Header() {
                             <span className={`relative z-10 ${
                                 isActive(link.href)
                                     ? 'text-white font-medium'
-                                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-emerald-400'
+                                    : 'text-white-700 dark:text-white-300 hover:text-primary-600 dark:hover:text-emerald-400'
                             }`}>
                                 {link.label}
                             </span>
@@ -61,7 +61,7 @@ export default function Header() {
                                     className={`absolute inset-0 rounded-lg -z-0 ${
                                         theme === 'dark'
                                             ? 'bg-gradient-to-r from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20'
-                                            : 'bg-gradient-to-r from-indigo-600 to-primary-700 shadow-lg shadow-primary-500/20'
+                                            : 'bg-gradient-to-r from-teal-600 to-teal-700 shadow-lg shadow-primary-500/20'
                                     }`}
                                     initial={{opacity: 0}}
                                     animate={{opacity: 1}}

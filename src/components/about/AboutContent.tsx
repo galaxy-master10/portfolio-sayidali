@@ -152,7 +152,7 @@ export default function AboutContent() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
                                     <div className="flex items-center space-x-3">
                                         <div
-                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            className="w-10 h-10  rounded-full bg-cyan-400 flex items-center justify-center text-black">
                                             <FiMapPin/>
                                         </div>
                                         <span>Kortrijk, Belgium</span>
@@ -160,7 +160,7 @@ export default function AboutContent() {
 
                                     <div className="flex items-center space-x-3">
                                         <div
-                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black">
                                             <FiCode/>
                                         </div>
                                         <span>2.5+ Years Experience</span>
@@ -168,7 +168,7 @@ export default function AboutContent() {
 
                                     <div className="flex items-center space-x-3">
                                         <div
-                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black">
                                             <FiCoffee/>
                                         </div>
                                         <span>Coffee Enthusiast</span>
@@ -176,7 +176,7 @@ export default function AboutContent() {
 
                                     <div className="flex items-center space-x-3">
                                         <div
-                                            className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500">
+                                            className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black">
                                             <FiBookOpen/>
                                         </div>
                                         <span>Lifelong Learner</span>
@@ -314,14 +314,14 @@ function solveProblems(problem) {
                                     />
                                 </div>
 
-                                <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6">
+                                <div className="bg-gray-900 text-white dark:bg-gray-800 rounded-xl p-6">
                                     <h3 className="text-xl font-bold mb-4">Let&apos;s Connect</h3>
                                     <p className="mb-4">
                                         I&apos;m always interested in new opportunities, collaborations, or just chatting about tech. Feel free to reach out!
                                     </p>
                                     <motion.a
                                         href="mailto:hello@sayidali.com"
-                                        className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg inline-flex items-center gap-2 transition-colors"
+                                        className="px-6 py-3 bg-emerald-500 hover:bg-primary-600 text-white rounded-lg inline-flex items-center gap-2 transition-colors"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.97 }}
                                     >
@@ -336,12 +336,12 @@ function solveProblems(problem) {
             </section>
 
             {/* Interest Section with Parallax */}
-            <section className="py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
+            <section className="py-20 bg- dark:bg-gray-900 overflow-hidden relative">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.1 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
+                    initial={{opacity: 0}}
+                    whileInView={{opacity: 0.1}}
+                    transition={{duration: 1}}
+                    viewport={{once: true}}
                     className="absolute inset-0 z-0"
                 >
                     <svg
@@ -351,7 +351,7 @@ function solveProblems(problem) {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        {Array.from({ length: 20 }).map((_, i) => (
+                        {Array.from({length: 20}).map((_, i) => (
                             <motion.path
                                 key={i}
                                 d={`M0 ${25 + i * 3} C ${20 + i * 2} ${10 + i * 5}, ${70 - i * 2} ${80 - i * 3}, 100 ${40 + i * 2}`}
@@ -359,63 +359,68 @@ function solveProblems(problem) {
                                 strokeWidth="0.5"
                                 strokeOpacity="0.3"
                                 className="text-primary-500"
-                                initial={{ pathLength: 0 }}
-                                whileInView={{ pathLength: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 2, delay: i * 0.1 }}
+                                initial={{pathLength: 0}}
+                                whileInView={{pathLength: 1}}
+                                viewport={{once: true}}
+                                transition={{duration: 2, delay: i * 0.1}}
                             />
                         ))}
                     </svg>
                 </motion.div>
 
+
+                <div className="w-3/4 h-[1px] bg-red-300 dark:bg-gray-700 my-8 mx-auto">
+
+                </div>
                 <div className="container mx-auto px-4 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true}}
+                        transition={{duration: 0.8}}
                         className="text-center max-w-3xl mx-auto mb-16"
                     >
                         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                             Beyond <span className="text-primary-500">Coding</span>
                         </h2>
-                        <p className="text-gray-700 dark:text-gray-300">
-                            When  I&apos;m not immersed in lines of code, here are some things I enjoy
+                        <p className="text-gray-300 dark:text-gray-300">
+                            When I&apos;m not immersed in lines of code, here are some things I enjoy
                         </p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: <FiHeadphones className="w-8 h-8" />,
+                                icon: <FiHeadphones className="w-8 h-8 "/>,
                                 title: "Music & Podcasts",
                                 description: "I enjoy listening to tech podcasts and a wide range of music while coding."
                             },
                             {
-                                icon: <FiBookOpen className="w-8 h-8" />,
+                                icon: <FiBookOpen className="w-8 h-8"/>,
                                 title: "Reading",
                                 description: "I'm constantly reading technical books and articles to stay updated with the latest trends."
                             },
                             {
-                                icon: <FiCamera className="w-8 h-8" />,
+                                icon: <FiCamera className="w-8 h-8"/>,
                                 title: "Photography",
-                              description: "I'm a photography enthusiast who enjoys capturing moments and exploring creative compositions."
+                                description: "I'm a photography enthusiast who enjoys capturing moments and exploring creative compositions."
                             }
                         ].map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
-                                whileHover={{ y: -10 }}
+                                className="bg-gray-900 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{duration: 0.5, delay: 0.2 + (index * 0.1)}}
+                                whileHover={{y: -10}}
                             >
-                                <div className="w-16 h-16 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500 mb-4">
+                                <div
+                                    className="w-16 h-16 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500 mb-4">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                                <h3 className="text-xl  text-emerald-200 font-bold mb-2">{item.title}</h3>
+                                <p className="text-white-600 dark:text-gray-400">{item.description}</p>
                             </motion.div>
                         ))}
                     </div>

@@ -16,7 +16,7 @@ export default function Contact() {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                         Contact <span className="text-indigo-500 dark:text-emerald-400">Me</span>
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg mb-12 max-w-3xl">
+                    <p className="text-gray dark:text-gray-400 text-lg mb-12 max-w-3xl">
                         Have a project in mind? Looking to collaborate or hire me? Feel free to reach out using the contact form or through my social profiles.
                     </p>
 
@@ -25,7 +25,7 @@ export default function Contact() {
                         <div className="lg:col-span-2 space-y-8">
                             <div>
                                 <h2 className="text-2xl font-bold mb-4">Let&apos;s Connect</h2>
-                                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                                <p className="text-gray dark:text-gray-400 mb-6">
                                     I&apos;m currently available for freelance projects, part-time positions, or just to discuss potential collaborations.
                                 </p>
                             </div>
@@ -39,7 +39,7 @@ export default function Contact() {
                                         <h3 className="font-medium mb-1">Email</h3>
                                         <a
                                             href="mailto:ibrahimsaydali10@gmail.com"
-                                            className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-emerald-400 transition-colors"
+                                            className="text-green-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-emerald-400 transition-colors"
                                         >
                                             contact@sayidali.com
                                         </a>
@@ -52,7 +52,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-medium mb-1">Location</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">
+                                        <p className="text-orange-200 dark:text-gray-400">
                                             Kortrijk, Belgium
                                         </p>
                                     </div>
@@ -94,7 +94,7 @@ export default function Contact() {
                         </div>
 
                         {/* Contact Form Column */}
-                        <div className="lg:col-span-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8">
+                        <div className="lg:col-span-3 bg-black-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8">
                             <ContactForm />
                         </div>
                     </div>

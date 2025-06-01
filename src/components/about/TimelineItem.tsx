@@ -23,7 +23,7 @@ export default function TimelineItem({ year, title, company, description }: Time
             <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">{year}</div>
             <h3 className="text-xl font-bold mb-1">{title}</h3>
             <div className="font-medium text-primary-500 mb-2">{company}</div>
-            <p className="text-gray-600 dark:text-gray-400">{description}</p>
+            <p className="text-gray-400 dark:text-gray-400">{description}</p>
         </motion.div>
     )
 }

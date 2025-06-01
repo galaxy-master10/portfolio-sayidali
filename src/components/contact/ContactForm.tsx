@@ -57,43 +57,7 @@ export default function ContactForm() {
             })
         }
     }
-/*
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
 
-        if (!validateForm()) return
-
-        setFormState('submitting')
-
-        // Simulate API call
-        try {
-            // Replace with actual form submission logic
-            await new Promise(resolve => setTimeout(resolve, 1500))
-
-            // Success
-            setFormState('success')
-            setFormData({
-                name: '',
-                email: '',
-                subject: '',
-                message: '',
-            })
-
-            // Reset form state after 3 seconds
-            setTimeout(() => {
-                setFormState('idle')
-            }, 3000)
-        } catch (error) {
-            console.error('Error submitting form:', error)
-            setFormState('error')
-
-            // Reset error state after 3 seconds
-            setTimeout(() => {
-                setFormState('idle')
-            }, 3000)
-        }
-    }
-*/
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -139,12 +103,12 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
-            <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white">Send Me a Message</h2>
 
             <div className="space-y-4">
                 {/* Name Field */}
                 <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-300">
                         Name
                     </label>
                     <input
@@ -155,20 +119,20 @@ export default function ContactForm() {
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
                             formErrors.name
-                                ? 'border-red-500 dark:border-red-500'
-                                : 'border-gray-300 dark:border-gray-600'
-                        } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-emerald-500`}
+                                ? 'border-red-500'
+                                : 'border-gray-600'
+                        } bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
                         placeholder="Your Name"
                         disabled={formState === 'submitting'}
                     />
                     {formErrors.name && (
-                        <p className="mt-1 text-sm text-red-500">{formErrors.name}</p>
+                        <p className="mt-1 text-sm text-red-400">{formErrors.name}</p>
                     )}
                 </div>
 
                 {/* Email Field */}
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-300">
                         Email
                     </label>
                     <input
@@ -179,20 +143,20 @@ export default function ContactForm() {
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
                             formErrors.email
-                                ? 'border-red-500 dark:border-red-500'
-                                : 'border-gray-300 dark:border-gray-600'
-                        } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-emerald-500`}
+                                ? 'border-red-500'
+                                : 'border-gray-600'
+                        } bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
                         placeholder="your.email@example.com"
                         disabled={formState === 'submitting'}
                     />
                     {formErrors.email && (
-                        <p className="mt-1 text-sm text-red-500">{formErrors.email}</p>
+                        <p className="mt-1 text-sm text-red-400">{formErrors.email}</p>
                     )}
                 </div>
 
                 {/* Subject Field */}
                 <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-1">
+                    <label htmlFor="subject" className="block text-sm font-medium mb-1 text-gray-300">
                         Subject
                     </label>
                     <input
@@ -203,20 +167,20 @@ export default function ContactForm() {
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
                             formErrors.subject
-                                ? 'border-red-500 dark:border-red-500'
-                                : 'border-gray-300 dark:border-gray-600'
-                        } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-emerald-500`}
+                                ? 'border-red-500'
+                                : 'border-gray-600'
+                        } bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
                         placeholder="What's this about?"
                         disabled={formState === 'submitting'}
                     />
                     {formErrors.subject && (
-                        <p className="mt-1 text-sm text-red-500">{formErrors.subject}</p>
+                        <p className="mt-1 text-sm text-red-400">{formErrors.subject}</p>
                     )}
                 </div>
 
                 {/* Message Field */}
                 <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-300">
                         Message
                     </label>
                     <textarea
@@ -227,14 +191,14 @@ export default function ContactForm() {
                         rows={5}
                         className={`w-full px-4 py-3 rounded-lg border ${
                             formErrors.message
-                                ? 'border-red-500 dark:border-red-500'
-                                : 'border-gray-300 dark:border-gray-600'
-                        } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-emerald-500`}
+                                ? 'border-red-500'
+                                : 'border-gray-600'
+                        } bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors resize-none`}
                         placeholder="Your message here..."
                         disabled={formState === 'submitting'}
                     />
                     {formErrors.message && (
-                        <p className="mt-1 text-sm text-red-500">{formErrors.message}</p>
+                        <p className="mt-1 text-sm text-red-400">{formErrors.message}</p>
                     )}
                 </div>
             </div>
@@ -243,13 +207,13 @@ export default function ContactForm() {
             <motion.button
                 type="submit"
                 disabled={formState === 'submitting' || formState === 'success'}
-                className={`w-full py-3 px-6 rounded-lg flex items-center justify-center font-medium transition-colors ${
+                className={`w-full py-3 px-6 rounded-lg flex items-center justify-center font-medium transition-all ${
                     formState === 'error'
-                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        ? 'bg-red-600 hover:bg-red-700 text-white'
                         : formState === 'success'
-                            ? 'bg-green-500 text-white'
-                            : 'bg-indigo-500 hover:bg-indigo-600 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white'
-                }`}
+                            ? 'bg-emerald-600 text-white'
+                            : 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
                 whileTap={{ scale: 0.98 }}
             >
                 {formState === 'submitting' ? (
@@ -280,9 +244,29 @@ export default function ContactForm() {
 
             {/* Status Messages */}
             {formState === 'error' && (
-                <div className="mt-4 p-4 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg">
-                    <p>There was an error sending your message. Please try again later.</p>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-red-900/20 border border-red-500/50 text-red-400 rounded-lg"
+                >
+                    <p className="flex items-center">
+                        <FiAlertCircle className="mr-2 flex-shrink-0" />
+                        There was an error sending your message. Please try again later.
+                    </p>
+                </motion.div>
+            )}
+
+            {formState === 'success' && (
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/50 text-emerald-400 rounded-lg"
+                >
+                    <p className="flex items-center">
+                        <FiCheck className="mr-2 flex-shrink-0" />
+                        Thank you for your message! I'll get back to you soon.
+                    </p>
+                </motion.div>
             )}
         </form>
     )

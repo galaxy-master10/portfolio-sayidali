@@ -21,7 +21,6 @@ type Skill = {
     icon?: any
 }
 
-//–– 1) Define your category order, labels & icons here ––
 const STATIC_CATEGORIES: {
     id: string
     label: string
@@ -37,14 +36,14 @@ const STATIC_CATEGORIES: {
 export default function SkillsVisual({ skills }: { skills: Skill[] }) {
     const [selectedCategory, setSelectedCategory] = useState('all')
 
-    // Build the tab list: “All Skills” + only those STATIC_CATEGORIES that actually appear
+    // Build the tab list: "All Skills" + only those STATIC_CATEGORIES that actually appear
     const categories = useMemo(() => {
         const used = new Set(skills.map((s) => s.category).filter(Boolean))
         const filtered = STATIC_CATEGORIES.filter((c) => used.has(c.id))
         return [{ id: 'all', label: 'All Skills', Icon: FiGrid }, ...filtered]
     }, [skills])
 
-    // For non-“all” views, pre-filter
+    // For non-"all" views, pre-filter
     const displayedSkills = useMemo(() => {
         if (selectedCategory === 'all') return skills
         return skills.filter((s) => s.category === selectedCategory)
@@ -66,8 +65,7 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
         hover: {
             y: -10,
             scale: 1.05,
-            boxShadow:
-                '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            boxShadow: '0 20px 25px -5px rgba(16, 185, 129, 0.25)',
         },
     }
     const progressVariants = {
@@ -97,10 +95,10 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                         <motion.button
                             key={id}
                             onClick={() => setSelectedCategory(id)}
-                            className={`px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors ${
+                            className={`px-4 py-2 rounded-lg flex items-center space-x-2 transition-all ${
                                 selectedCategory === id
-                                    ? 'bg-primary-500 text-white'
-                                    : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
+                                    ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20'
+                                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                             }`}
                             variants={tabVariants}
                             animate={selectedCategory === id ? 'active' : 'inactive'}
@@ -117,7 +115,7 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
             {/* ——— Skills Display ——— */}
             <AnimatePresence mode="wait">
                 {selectedCategory === 'all' ? (
-                    // ——— All Skills: show “islands” per category ———
+                    // ——— All Skills: show "islands" per category ———
                     Object.entries(grouped).map(([catId, skillsInCat]) => {
                         const catMeta =
                             categories.find((c) => c.id === catId) ||
@@ -133,8 +131,8 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                 className="space-y-4"
                             >
                                 {/* Category heading */}
-                                <h3 className="flex items-center text-2xl font-bold gap-2">
-                                    <catMeta.Icon className="w-6 h-6 text-primary-500" />
+                                <h3 className="flex items-center text-2xl font-bold gap-2 text-white">
+                                    <catMeta.Icon className="w-6 h-6 text-emerald-400" />
                                     {catMeta.label}
                                 </h3>
 
@@ -145,7 +143,7 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                             key={skill._id}
                                             variants={cardVariants}
                                             whileHover="hover"
-                                            className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
+                                            className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-md hover:border-emerald-500/50 transition-colors"
                                         >
                                             <div className="flex flex-col items-center text-center">
                                                 {skill.icon && (
@@ -168,21 +166,28 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                                         />
                                                     </motion.div>
                                                 )}
-                                                <h4 className="text-lg font-medium mb-2">{skill.name}</h4>
+                                                <h4 className="text-lg font-medium mb-3 text-gray-100">
+                                                    {skill.name}
+                                                </h4>
 
-                                                {/* Green progress bar with overlay */}
-                                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden relative my-2">
-                                                    <motion.div
-                                                        className="bg-blue-300 h-2.5 rounded-full"
-                                                        variants={progressVariants}
-                                                        initial="hidden"
-                                                        whileInView="visible"
-                                                        viewport={{ once: true }}
-                                                        custom={skill.proficiency}
-                                                    />
-                                                    <span className="absolute inset-0 flex items-center justify-center text-[0.65rem] font-medium text-white">
-                            {skill.proficiency}%
-                          </span>
+                                                {/* Progress bar container */}
+                                                <div className="w-full">
+                                                    <div className="flex justify-between mb-1">
+                                                        <span className="text-xs text-gray-400">Proficiency</span>
+                                                        <span className="text-xs text-emerald-400 font-medium">
+                                                            {skill.proficiency}%
+                                                        </span>
+                                                    </div>
+                                                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                                                        <motion.div
+                                                            className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full"
+                                                            variants={progressVariants}
+                                                            initial="hidden"
+                                                            whileInView="visible"
+                                                            viewport={{ once: true }}
+                                                            custom={skill.proficiency}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -206,7 +211,7 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                 key={skill._id}
                                 variants={cardVariants}
                                 whileHover="hover"
-                                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
+                                className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-md hover:border-emerald-500/50 transition-colors"
                             >
                                 <div className="flex flex-col items-center text-center">
                                     {skill.icon && (
@@ -229,21 +234,28 @@ export default function SkillsVisual({ skills }: { skills: Skill[] }) {
                                             />
                                         </motion.div>
                                     )}
-                                    <h4 className="text-lg font-medium mb-2">{skill.name}</h4>
+                                    <h4 className="text-lg font-medium mb-3 text-gray-100">
+                                        {skill.name}
+                                    </h4>
 
-                                    {/* Green progress bar with overlay */}
-                                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden relative my-2">
-                                        <motion.div
-                                            className="bg-green-200 h-2.5 rounded-full"
-                                            variants={progressVariants}
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            viewport={{ once: true }}
-                                            custom={skill.proficiency}
-                                        />
-                                        <span className="absolute inset-0 flex items-center justify-center text-[0.65rem] font-medium text-white">
-                      {skill.proficiency}%
-                    </span>
+                                    {/* Progress bar container */}
+                                    <div className="w-full">
+                                        <div className="flex justify-between mb-1">
+                                            <span className="text-xs text-gray-400">Proficiency</span>
+                                            <span className="text-xs text-emerald-400 font-medium">
+                                                {skill.proficiency}%
+                                            </span>
+                                        </div>
+                                        <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                                            <motion.div
+                                                className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full"
+                                                variants={progressVariants}
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ once: true }}
+                                                custom={skill.proficiency}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
